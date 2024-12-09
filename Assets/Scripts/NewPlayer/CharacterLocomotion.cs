@@ -15,6 +15,11 @@ public class CharacterLocomotion : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
 
+        if (!_photonView.IsMine)
+        {
+            Destroy(_rb);
+        }
+
     }
     void Update()
     {
