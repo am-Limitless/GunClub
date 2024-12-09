@@ -7,7 +7,6 @@ public class CharacterLocomotion : MonoBehaviour
     private Vector2 _input;
     private PhotonView _photonView;
     Rigidbody _rb;
-    //[SerializeField] Camera _camera;
 
 
     private void Start()
@@ -15,7 +14,6 @@ public class CharacterLocomotion : MonoBehaviour
         _photonView = GetComponent<PhotonView>();
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-        //_camera = Camera.main;
 
     }
     void Update()

@@ -7,7 +7,6 @@ public class CharacterAiming : MonoBehaviour
     public float turnSpeed = 15f;
     [SerializeField] Camera _playerCamera;
     private PhotonView _photonView;
-    //CinemachineVirtualCamera _virtualCamera;
 
     [SerializeField] CinemachineFreeLook _virtualCam;
 
@@ -15,8 +14,6 @@ public class CharacterAiming : MonoBehaviour
     void Start()
     {
         _photonView = GetComponent<PhotonView>();
-        //_playerCamera = GetComponentInChildren<Camera>();
-        //_virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
 
         if (!_photonView.IsMine)
         {
