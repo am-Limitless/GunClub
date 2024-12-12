@@ -8,12 +8,12 @@ public class CharacterAiming : MonoBehaviour
     public float turnSpeed = 15f;
     public float aimDuration = 0.3f;
     public Rig aimLayer;
+    public GameObject debugTransform;
     [SerializeField] Camera _playerCamera;
     private PhotonView _photonView;
     [SerializeField] CinemachineFreeLook _virtualCam;
-    [SerializeField] Transform debugTransform;
     [SerializeField] LayerMask aimColliderLayerMask = new LayerMask();
-    
+
 
     void Start()
     {
@@ -23,10 +23,31 @@ public class CharacterAiming : MonoBehaviour
         {
             _playerCamera.enabled = false;
             Destroy(_virtualCam.gameObject);
+            debugTransform.SetActive(false);
+            aimLayer.weight = 0;
         }
     }
 
     private void Update()
+    {
+        if (_photonView.IsMine)
+        {
+            GunAiming();
+        }
+
+    }
+
+    void FixedUpdate()
+    {
+        if (_photonView.IsMine)
+        {
+            CameraRotate();
+            LookAtTarget();
+        }
+
+    }
+
+    public void GunAiming()
     {
         if (Input.GetMouseButton(1))
         {
@@ -36,16 +57,6 @@ public class CharacterAiming : MonoBehaviour
         {
             aimLayer.weight -= Time.deltaTime / aimDuration;
         }
-    }
-
-    void FixedUpdate()
-    {
-        if (!_photonView.IsMine)
-        {
-            return;
-        }
-        CameraRotate();
-        LookAtTarget();
     }
 
     public void CameraRotate()
@@ -61,7 +72,7 @@ public class CharacterAiming : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
-            debugTransform.position = raycastHit.point;
+            debugTransform.transform.position = raycastHit.point;
         }
     }
 }

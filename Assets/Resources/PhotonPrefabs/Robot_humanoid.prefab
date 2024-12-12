@@ -1177,7 +1177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603423082745809202}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1528877, y: -0.000000006952671, z: 0.0000000010756207, w: 0.9882436}
+  m_LocalRotation: {x: 0.15288766, y: 0, z: 0, w: 0.9882436}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1526,7 +1526,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 3918175531032991956}
+        transform: {fileID: 8915973809890764777}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
@@ -1625,6 +1625,7 @@ Transform:
   - {fileID: 4643992568524978102}
   - {fileID: 1803666122969463189}
   - {fileID: 3918175531032991956}
+  - {fileID: 8915973809890764777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9086786437982459589
@@ -1726,9 +1727,9 @@ MonoBehaviour:
   turnSpeed: 15
   aimDuration: 0.3
   aimLayer: {fileID: 281213530739139163}
+  debugTransform: {fileID: 4856074828467000737}
   _playerCamera: {fileID: 4300869027717687877}
   _virtualCam: {fileID: 4007288169418943477}
-  debugTransform: {fileID: 3918175531032991956}
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -1817,7 +1818,15 @@ MonoBehaviour:
     m_Active: 1
   - m_Rig: {fileID: 9219707226678467481}
     m_Active: 1
-  m_Effectors: []
+  m_Effectors:
+  - m_Transform: {fileID: 3567192876543282243}
+    m_Style:
+      shape: {fileID: 4300000, guid: c6793350c150f456688e39a81f97364a, type: 2}
+      color: {r: 1, g: 0, b: 0, a: 0.5}
+      size: 0.1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+    m_Visible: 1
 --- !u!1 &2175960843590729167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,7 +2739,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 3918175531032991956}
+        transform: {fileID: 8915973809890764777}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
@@ -3670,6 +3679,37 @@ Transform:
   - {fileID: 3566222846613469877}
   m_Father: {fileID: 4845618514948521030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4856074828467000737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8915973809890764777}
+  m_Layer: 0
+  m_Name: AimToLook
+  m_TagString: AimLook
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8915973809890764777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4856074828467000737}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.13488673, y: 0.0000000036689283, z: -4.9945426e-10, w: 0.99086106}
+  m_LocalPosition: {x: 0.38000014, y: -3.2152405, z: 17.04156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3567192876543282243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4945995133686050301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,8 +4098,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5961522135641239580}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11688892, y: 0, z: 0, w: 0.99314505}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000023841858}
+  m_LocalRotation: {x: 0.116888866, y: 0, z: 0, w: 0.99314505}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4517,8 +4557,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7232119778266807913}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13488676, y: -0.00000002161743, z: 0.0000000029428002, w: 0.99086106}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000023841858}
+  m_LocalRotation: {x: 0.13488674, y: 0, z: 0, w: 0.99086106}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5223,7 +5263,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 3918175531032991956}
+        transform: {fileID: 8915973809890764777}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
@@ -5674,7 +5714,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 3918175531032991956}
+        transform: {fileID: 8915973809890764777}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
